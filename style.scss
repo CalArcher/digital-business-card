@@ -9,19 +9,12 @@
 .has-shadow {
   box-shadow: var(--shadow-1);
 }
-
 * {
   margin: 0;
   padding: 0;
   transition: all 0.15s ease-in-out;
 }
-#role {
-  font-style: italic;
-  font-size: calc(0.45rem + 0.64vw);
 
-  padding: 0;
-  margin: 0;
-}
 main {
   display: flex;
   align-items: center;
@@ -41,10 +34,20 @@ h1 {
   margin: 0;
 }
 
+span {
+  font-size: calc(0.5rem + 1.15vw);
+}
+img {
+  user-select: none;
+  border-radius: 5px;
+  width: calc(var(--size-8) + 14vw);
+  height: calc(var(--size-8) + 14vw);
+}
+
 #tagline {
   padding: 0;
   margin: 0;
-  font-size: calc(0.45rem + 0.64vw);
+  font-size: calc(0.35rem + 1.1vw); //varies slightly depending on how long tagline is
 }
 
 #name {
@@ -52,34 +55,54 @@ h1 {
   color: black;
   font-weight: bold;
 }
-
-span {
-  font-size: calc(0.5rem + 1.15vw);
+#role {
+  font-style: italic;
+  font-size: calc(0.45rem + 0.64vw);
+  padding: 0;
+  padding-bottom: calc(0.05rem + 0.22vw);
+  margin: 0;
+}
+.contact-details {
+  font-size: calc(0.5rem + 0.75vw);
 }
 
 .qr-code {
   text-decoration: none;
+  font-weight: 500;
   position: absolute;
-  top: 96%;
-  opacity: 0.6;
-  left: 1%;
-  font-size: calc(0.5rem + 0.5vw);
-}
-.vcard {
-  text-decoration: none;
-  margin-top: calc(0.5rem + 5vw);
-  text-align: center;
-  width: 100%;
-  font-size: calc(0.5rem + 0.5vw);
+  bottom: 0;
+  left: 0;
+  opacity: 0.7;
+  padding: 0 0 calc(1rem + 0.7vw) calc(1rem + 0.7vw);
+  font-size: calc(1.75rem + 0.75vw);
+  background-color: transparent;
+  user-select: none;
+  &:hover {
+    background-color: transparent;
+  }
 }
 
-img {
+.vcard {
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: calc(2rem + 1vw);
+  text-align: center;
+  width: fit-content;
+  font-size: calc(0.65rem + 0.5vw);
+  background-color: transparent;
   user-select: none;
-  border-radius: 5px;
-  margin: 1.5vw 1.5vw 0 0;
-  width: calc(var(--size-7) + 12vw);
-  height: calc(var(--size-7) + 12vw);
+  padding: var(--size-2);
+  border-radius: 1rem;
+  &:hover {
+    background-color: transparent;
+  }
 }
+
+.nf-mdi-download {
+  margin-left: calc(0.1rem + 0.2vw);
+  font-size: calc(0.55rem + 0.45vw);
+}
+
 .text {
   display: flex;
   justify-content: space-between;
@@ -116,6 +139,7 @@ img {
 }
 
 .social-links {
+  margin-top: 0.1rem;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -181,6 +205,8 @@ img {
   }
 }
 
+//media queries
+
 //less than fullscreen
 @media screen and (max-width: 1230px) {
   .card {
@@ -215,6 +241,13 @@ img {
 
 //small phone
 @media screen and (max-width: 360px) {
+  #role {
+    font-size: calc(0.45rem + 0.64vw);
+  }
+
+  span {
+    font-size: calc(0.4rem + 1.15vw);
+  }
   .card {
     height: 54vw;
     width: 96vw;
