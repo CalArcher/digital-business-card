@@ -1,0 +1,222 @@
+@import 'https://octoshrimpy.github.io/microcss/micro.css';
+@import 'https://octoshrimpy.github.io/microcss/nf.css';
+
+@mixin professional-bg {
+  // background: linear-gradient(45deg, rgb(58, 156, 71), rgba(0, 0, 0, 0.5));
+  background: var(--orange-1);
+}
+
+.has-shadow {
+  box-shadow: var(--shadow-1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  transition: all 0.15s ease-in-out;
+}
+#role {
+  font-style: italic;
+  font-size: calc(0.45rem + 0.64vw);
+
+  padding: 0;
+  margin: 0;
+}
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+body {
+  position: relative;
+  @include professional-bg();
+}
+
+h1 {
+  font-size: calc(var(--size-2) + 3vw);
+  padding: 0;
+  margin: 0;
+}
+
+#tagline {
+  padding: 0;
+  margin: 0;
+  font-size: calc(0.45rem + 0.64vw);
+}
+
+#name {
+  line-height: 100%;
+  color: black;
+  font-weight: bold;
+}
+
+span {
+  font-size: calc(0.5rem + 1.15vw);
+}
+
+.qr-code {
+  text-decoration: none;
+  position: absolute;
+  top: 96%;
+  opacity: 0.6;
+  left: 1%;
+  font-size: calc(0.5rem + 0.5vw);
+}
+.vcard {
+  text-decoration: none;
+  margin-top: calc(0.5rem + 5vw);
+  text-align: center;
+  width: 100%;
+  font-size: calc(0.5rem + 0.5vw);
+}
+
+img {
+  user-select: none;
+  border-radius: 5px;
+  margin: 1.5vw 1.5vw 0 0;
+  width: calc(var(--size-7) + 12vw);
+  height: calc(var(--size-7) + 12vw);
+}
+.text {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.card {
+  margin: 0;
+  padding: calc(0.15rem + 3.25vw);
+  z-index: 1;
+  border-radius: 4px 12px;
+  top: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  height: 31vw;
+  width: 55vw;
+  &:hover {
+    z-index: 1;
+    background: white;
+    box-shadow: var(--shadow-2);
+    // top: -0.07rem;
+    transform: scale(100.05%);
+  }
+}
+
+.business-info {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+.social-links {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.contact-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: left;
+  padding-bottom: calc(0.15rem + 2.5vw);
+}
+
+.button {
+  // font-family: monospace;
+  width: 22%;
+  text-align: center;
+  font-size: calc(0.33rem + 0.75vw);
+  border-radius: var(--radius-2);
+  padding: var(--size-1);
+  margin: 0 5%;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  transition: background ease-in-out 0.2s, top ease-in-out 0.07s;
+  user-select: none;
+  top: -1;
+  border: 1px solid var(--blue-4);
+  color: var(--gray-7);
+  background: var(--blue-0);
+
+  &:after {
+    transition: bottom ease-in-out 0.07s;
+    position: absolute;
+    bottom: -0.4em; // border thickness
+    left: -1px;
+    z-index: -10;
+    display: flex;
+    content: '';
+    background: var(--blue-7);
+    height: 1em;
+    width: calc(100% + 2px);
+    border-radius: 0 0 5px 5px;
+  }
+
+  &:hover {
+    background: var(--blue-1);
+    font-weight: bold;
+  }
+
+  &:active {
+    top: 0.3em;
+
+    &:after {
+      bottom: 0;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-right: 0.5em;
+  }
+}
+
+//less than fullscreen
+@media screen and (max-width: 1230px) {
+  .card {
+    height: 38vw;
+    width: 68vw;
+  }
+}
+
+//tablet
+@media screen and (max-width: 768px) {
+  .card {
+    height: 41vw;
+    width: 72vw;
+  }
+}
+
+//large phone
+@media screen and (max-width: 560px) {
+  .card {
+    height: 51vw;
+    width: 90vw;
+  }
+}
+
+//medium phone
+@media screen and (max-width: 440px) {
+  .card {
+    height: 51vw;
+    width: 91.5vw;
+  }
+}
+
+//small phone
+@media screen and (max-width: 360px) {
+  .card {
+    height: 54vw;
+    width: 96vw;
+  }
+}

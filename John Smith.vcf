@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 12.6//EN
+N:Smith;John;;;
+FN:John Smith
+ORG:Cool Business;
+EMAIL;type=INTERNET;type=HOME;type=pref:mybuisness@gmail.com
+TEL;type=CELL;type=VOICE;type=pref:720-123-4567
+item1.URL;type=pref:mybusiness.com
+item1.X-ABLabel:_$!<HomePage>!$_
+END:VCARD
