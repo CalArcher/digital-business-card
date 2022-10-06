@@ -124,8 +124,7 @@ img {
     z-index: 1;
     background: white;
     box-shadow: var(--shadow-2);
-    // top: -0.07rem;
-    transform: scale(100.05%);
+    transform: translateY(-1px);
   }
 }
 

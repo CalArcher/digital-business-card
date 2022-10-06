@@ -135,7 +135,7 @@ img {
   z-index: 1;
   background: white;
   box-shadow: var(--shadow-2);
-  transform: scale(100.05%);
+  transform: translateY(-1px);
 }
 
 .business-info {
